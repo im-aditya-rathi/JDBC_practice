@@ -15,6 +15,7 @@ public class JdbcImageOperation {
 	static String uploadFolderPath = "images" + File.separator + "upload" + File.separator;
 	static String downloadFloderPath = "images" + File.separator + "download" + File.separator;
 
+	// Used to upload image from "images/upload" location to database.
 	public static void uploadImage(String imgName) {
 		try {
 			String q = "insert into image(name,img) values (?,?)";
@@ -39,7 +40,8 @@ public class JdbcImageOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
+	// Used to download image to "images/download" location from database using image id.
 	public static void downloadImage(int id) {
 		String imageName = null;
 		String imageRawName = null;
